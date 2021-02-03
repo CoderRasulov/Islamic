@@ -19,7 +19,7 @@ class BoshSahifaController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     
-    var names = ["namoz vaqtlari", "duolar", "zikrlar", "asmaul_husna", "islom", "qibla", "tasbeh", "olti_diniy_kalima"]
+    var names = ["namoz_vaqtlari", "duolar", "zikrlar", "asmaul_husna", "islom", "qibla", "tasbeh", "olti_diniy_kalima"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,6 +137,7 @@ extension BoshSahifaController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionCell
         cell.iconTitle.text = names[indexPath.row]
+        cell.iconImage.image = UIImage(named: names[indexPath.row])
         return cell
     }
     

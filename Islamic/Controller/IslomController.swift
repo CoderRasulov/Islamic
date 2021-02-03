@@ -31,7 +31,7 @@ extension IslomController: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "islomCell", for: indexPath) as! CustomCollectionCell
                 
-        cell.iconImage.image = UIImage(named: "time_\(indexPath.row)")
+        cell.iconImage.image = UIImage(named: namesArray[indexPath.row])
         cell.iconTitle.text = namesArray[indexPath.row]
         
         return cell
@@ -42,7 +42,7 @@ extension IslomController: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        15
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
